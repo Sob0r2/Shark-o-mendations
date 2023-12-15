@@ -1,0 +1,120 @@
+<NumOfSwipesScreen>:
+    name: "numofswipesscreen"
+
+    MDFloatLayout:
+        Image:
+            source: "Graphics/background.jpg"  # Ścieżka do twojego obrazu tła
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: "Graphics/logo.png"
+            size_hint: None, None
+            size: 400, 300
+            pos_hint: {'center_x': 0.485, 'center_y': 0.75}
+
+        MDLabel:
+            text: "Shark-o-mendations"
+            theme_text_color: "Custom"
+            text_color: 0.8, 0.8, 0.8, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.6}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 55
+
+        MDLabel:
+            text: "Find your new best movie"
+            theme_text_color: "Custom"
+            text_color: 0.9, 0.9, 0.9, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.52}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 30
+
+        MDRoundFlatButton:
+            pos_hint: {"right": 0.97, "top": 0.97}  # Prawy górny róg
+            size_hint: None, None
+            size: 60, 60
+            on_release: root.infoButton()
+
+            Image:
+                source: "Graphics/info.png"  # Ścieżka do twojego obrazu
+                size_hint: None, None
+                size: 60, 60
+                pos_hint: {"center_x": 0.8, "center_y": 0.5}
+
+        MDRoundFlatButton:
+            pos_hint: {"right": 0.13, "top": 0.97}  # Lewy górny róg
+            size_hint: None, None
+            size: 60, 60
+            on_release: root.exit()
+
+            Image:
+                source: "Graphics/back.png"  # Ścieżka do twojego obrazu
+                size_hint: None, None
+                size: 60, 60
+                pos_hint: {"center_x": 0.8, "center_y": 0.5}
+
+        MDCard:
+
+            pos_hint: {"center_x": 0.5, "center_y": 0.33}  # Pozycja guzika
+            size_hint: 0.6, 0.13  # Zmiana rozmiaru guzika
+            md_bg_color: "#13CBFD"
+            line_color: "#002A55"
+            line_width: 1.5
+            on_release: root.processButton()
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: dp(25)
+                spacing: dp(20)
+
+                MDLabel:
+                    text: "Rate Movies!!!"
+                    pos_hint: {"center_y": 0.5, "center_x": 0.2}
+                    theme_text_color: "Custom"
+                    text_color: "#002A55"
+                    font_name: "BUTTON_FONT"
+                    font_size: 30
+
+        Image:
+            source: "Graphics/small_logo.png"
+            size_hint: None, None
+            size: 200, 100
+            pos_hint: {"center_y": 0.33, "center_x": 0.7}
+            halign: "right"
+
+
+        MDCard:
+
+            pos_hint: {"center_x": 0.5, "center_y": 0.17}  # Pozycja guzika
+            size_hint: 0.6, 0.13  # Zmiana rozmiaru guzika
+            md_bg_color: "#13CBFD"
+            line_color: "#002A55"
+            line_width: 1.5
+            on_release: root.skipButton()
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: dp(25)
+                spacing: dp(20)
+
+                MDLabel:
+                    text: "Skip to Shark-o-mendations"
+                    pos_hint: {"center_y": 0.5, "center_x": 0.2}
+                    theme_text_color: "Custom"
+                    text_color: "#002A55"
+                    font_name: "BUTTON_FONT"
+                    font_size: 30
+
+        Image:
+            source: "Graphics/small_logo.png"
+            size_hint: None, None
+            size: 200, 100
+            pos_hint: {"center_y": 0.17, "center_x": 0.7}
+            halign: "right"
+

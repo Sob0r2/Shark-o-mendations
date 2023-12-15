@@ -1,0 +1,55 @@
+<LoadingScreen>:
+    name: "loadingscreen"
+
+    MDFloatLayout:
+
+        Image:
+            source: "Graphics/background.jpg"  # Ścieżka do twojego obrazu tła
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: "Graphics/logo.png"
+            size_hint: None, None
+            size: 400, 300
+            pos_hint: {'center_x': 0.485, 'center_y': 0.75}
+
+        MDLabel:
+            text: "Shark-o-mendations"
+            theme_text_color: "Custom"
+            text_color: 0.8, 0.8, 0.8, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.6}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 55
+
+        MDLabel:
+            text: "Find your new best movie"
+            theme_text_color: "Custom"
+            text_color: 0.9, 0.9, 0.9, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.52}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 30
+
+        MDSpinner:
+            size_hint: None, None
+            size: 200, 200
+            line_width: 10
+            color: "#002A55"
+            pos_hint: {"center_x": 0.5, "center_y": 0.25}
+            active: True
+
+        MDLabel:
+            id: spinner
+            text: ""
+            value: 0
+            pos_hint: {"center_x": 0.5, "center_y": 0.25}
+            color: "#002A55"
+            font_size: 40
+            font_name: "TITLE_FONT"
+            halign: "center"

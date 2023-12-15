@@ -1,0 +1,97 @@
+<ListItemWithCheckbox>:
+
+
+<GenresScreen>
+    name: "genresscreen"
+
+    MDFloatLayout:
+        Image:
+            source: "Graphics/background.jpg"  # Ścieżka do twojego obrazu tła
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: "Graphics/logo.png"
+            size_hint: None, None
+            size: 250, 150
+            pos_hint: {'center_x': 0.485, 'center_y': 0.9}
+
+        MDLabel:
+            text: "Shark-o-mendations"
+            theme_text_color: "Custom"
+            text_color: 0.8, 0.8, 0.8, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.825}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 30
+
+        MDRoundFlatButton:
+            pos_hint: {"right": 0.13, "top": 0.97}  # Lewy górny róg
+            size_hint: None, None
+            size: 60, 60
+            on_release: root.exit()
+
+            Image:
+                source: "Graphics/back.png"  # Ścieżka do twojego obrazu
+                size_hint: None, None
+                size: 60, 60
+                pos_hint: {"center_x": 0.8, "center_y": 0.5}
+
+        MDRoundFlatButton:
+            pos_hint: {"right": 0.97, "top": 0.97}  # Lewy górny róg
+            size_hint: None, None
+            size: 60, 60
+            on_release: root.commit_changes()
+            md_bg_color: "#458FCC"
+
+            Image:
+                source: "Graphics/ok.png"  # Ścieżka do twojego obrazu
+                size_hint: None, None
+                size: 60, 60
+                pos_hint: {"center_x": 0.8, "center_y": 0.5}
+
+        MDLabel:
+            text: "Choose Genres"
+            theme_text_color: "Custom"
+            text_color: 0.8, 0.8, 0.8, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.75}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 40
+
+
+        MDScrollView
+            size_hint: 0.8,0.5
+            pos_hint: {"center_x": .5, "center_y": .4}
+            MDList:
+                id: list_items
+                size_hint_y: None
+                height: self.minimum_height
+                pos_hint: {'center_y': 0.5}
+
+
+        MDCard:
+
+            pos_hint: {"center_x": 0.5, "center_y": 0.07}  # Pozycja guzika
+            size_hint: 0.25, 0.07  # Zmiana rozmiaru guzika
+            md_bg_color: "#13CBFD"
+            line_color: "#002A55"
+            line_width: 1.5
+            on_release: root.iterate_checkboxes(0)
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: dp(25)
+                spacing: dp(20)
+
+                MDLabel:
+                    text: "Uncheck all"
+                    pos_hint: {"center_y": 0.5, "center_x": 0.2}
+                    theme_text_color: "Custom"
+                    text_color: "#002A55"
+                    font_name: "BUTTON_FONT"
+                    font_size: 20

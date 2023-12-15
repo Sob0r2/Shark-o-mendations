@@ -1,0 +1,177 @@
+<SwipeScreen>:
+    name: "swipescreen"
+
+    MDFloatLayout:
+
+        Image:
+            source: "Graphics/background.jpg"  # Ścieżka do twojego obrazu tła
+            allow_stretch: True
+            keep_ratio: False
+
+        RelativeLayout:
+            Image:
+                id: movie_image
+                source: root.current_image
+                size_hint: None, None
+                size: 500, 400
+                pos_hint: {'center_x': 0.5, 'center_y': 0.62}
+
+            Button:
+                background_color: (0, 0, 0, 0)  # Transparent background color
+                size_hint: None, None
+                size: movie_image.size  # Set the size of the button to match the image size
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the button on the image
+                on_release: root.click_text()
+
+        RelativeLayout:
+
+            MDLabel:
+                id: movie_title
+                text: root.current_title
+                theme_text_color: "Custom"
+                text_color: 0.8, 0.8, 0.8, 1  # Jasnoszary kolor tekstu
+                outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+                outline_width: 3
+                pos_hint: {"center_x": 0.5, "center_y": 0.93}
+                halign: "center"
+                font_name: "BUTTON_FONT"
+                font_size: 40
+
+            Button:
+                background_color: (0, 0, 0, 0)  # Przezroczysty kolor tła
+                size_hint_y: None
+                height: dp(50)  # Ustaw wysokość przycisku
+                pos_hint: movie_title.pos_hint
+                on_release: root.click_text()
+
+
+        MDLabel:
+            id: to_go
+            text: root.to_go
+            theme_text_color: "Custom"
+            text_color: 0.8, 0.8, 0.8, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.1}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 30
+
+        RelativeLayout:
+            Image:
+                id: one_star
+                source: "Graphics/rekin.png"
+                size_hint: None, None
+                size: 130, 80
+                pos_hint: {'center_x': 0.2, 'center_y': 0.27}
+
+            Button:
+                background_color: (0, 0, 0, 0)  # Transparent background color
+                size_hint: None, None
+                size: one_star.size  # Set the size of the button to match the image size
+                pos_hint: {'center_x': 0.2, 'center_y': 0.27}  # Center the button on the image
+                on_release: root.stars(1)
+
+        RelativeLayout:
+            Image:
+                id: two_star
+                source: "Graphics/rekin.png"
+                size_hint: None, None
+                size: 130, 80
+                pos_hint: {'center_x': 0.35, 'center_y': 0.27}
+
+            Button:
+                background_color: (0, 0, 0, 0)  # Transparent background color
+                size_hint: None, None
+                size: two_star.size  # Set the size of the button to match the image size
+                pos_hint: {'center_x': 0.35, 'center_y': 0.27}  # Center the button on the image
+                on_release: root.stars(2)
+
+        RelativeLayout:
+            Image:
+                id: three_star
+                source: "Graphics/rekin.png"
+                size_hint: None, None
+                size: 130, 80
+                pos_hint: {'center_x': 0.5, 'center_y': 0.27}
+
+            Button:
+                background_color: (0, 0, 0, 0)  # Transparent background color
+                size_hint: None, None
+                size: three_star.size  # Set the size of the button to match the image size
+                pos_hint: {'center_x': 0.5, 'center_y': 0.27}  # Center the button on the image
+                on_release: root.stars(3)
+
+        RelativeLayout:
+            Image:
+                id: four_star
+                source: "Graphics/rekin.png"
+                size_hint: None, None
+                size: 130, 80
+                pos_hint: {'center_x': 0.65, 'center_y': 0.27}
+
+            Button:
+                background_color: (0, 0, 0, 0)  # Transparent background color
+                size_hint: None, None
+                size: four_star.size  # Set the size of the button to match the image size
+                pos_hint: {'center_x': 0.65, 'center_y': 0.27}  # Center the button on the image
+                on_release: root.stars(4)
+
+        RelativeLayout:
+            Image:
+                id: five_star
+                source: "Graphics/rekin.png"
+                size_hint: None, None
+                size: 130, 80
+                pos_hint: {'center_x': 0.8, 'center_y': 0.27}
+
+            Button:
+                background_color: (0, 0, 0, 0)  # Transparent background color
+                size_hint: None, None
+                size: five_star.size  # Set the size of the button to match the image size
+                pos_hint: {'center_x': 0.8, 'center_y': 0.27}  # Center the button on the image
+                on_release: root.stars(5)
+
+        MDCard:
+
+            pos_hint: {"center_x": 0.85, "center_y": 0.12}  # Pozycja guzika
+            size_hint: 0.17, 0.07 # Zmiana rozmiaru guzika
+            md_bg_color: "#13CBFD"
+            line_color: "#002A55"
+            line_width: 1.5
+            on_release: root.confirm()
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: dp(25)
+                spacing: dp(20)
+
+                MDLabel:
+                    text: "OK"
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: "#002A55"
+                    font_name: "BUTTON_FONT"
+                    font_size: 20
+
+        MDCard:
+
+            pos_hint: {"center_x": 0.15, "center_y": 0.12}  # Pozycja guzika
+            size_hint: 0.17, 0.07  # Zmiana rozmiaru guzika
+            md_bg_color: "#13CBFD"
+            line_color: "#002A55"
+            line_width: 1.5
+            on_release: root.skip()
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: dp(25)
+                spacing: dp(20)
+
+                MDLabel:
+                    text: "Skip"
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: "#002A55"
+                    font_name: "BUTTON_FONT"
+                    font_size: 20

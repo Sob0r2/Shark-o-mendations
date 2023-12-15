@@ -1,0 +1,60 @@
+<FinalScreen>:
+    name: "finalscreen"
+
+    MDFloatLayout:
+        Image:
+            source: "Graphics/background.jpg"  # Ścieżka do twojego obrazu tła
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: "Graphics/logo.png"
+            size_hint: None, None
+            size: 250, 150
+            pos_hint: {'center_x': 0.485, 'center_y': 0.9}
+
+        MDLabel:
+            text: "Shark-o-mendations"
+            theme_text_color: "Custom"
+            text_color: 0.8, 0.8, 0.8, 1  # Jasnoszary kolor tekstu
+            outline_color: 0, 0, 0, 1  # Czarny kolor obramowania tekstu
+            outline_width: 2
+            pos_hint: {"center_y": 0.825}
+            halign: "center"
+            font_name: "TITLE_FONT"
+            font_size: 30
+
+        MDRoundFlatButton:
+            pos_hint: {"right": 0.13, "top": 0.97}  # Lewy górny róg
+            size_hint: None, None
+            size: 60, 60
+            on_release: root.exit()
+
+            Image:
+                source: "Graphics/back.png"  # Ścieżka do twojego obrazu
+                size_hint: None, None
+                size: 60, 60
+                pos_hint: {"center_x": 0.8, "center_y": 0.5}
+
+        MDRoundFlatButton:
+            pos_hint: {"right": 0.97, "top": 0.97}  # Lewy górny róg
+            size_hint: None, None
+            size: 60, 60
+            on_release: root.filter()
+            md_bg_color: "#458FCC"
+
+            Image:
+                source: "Graphics/Filter.png"  # Ścieżka do twojego obrazu
+                size_hint: None, None
+                size: 60, 60
+                pos_hint: {"center_x": 0.8, "center_y": 0.5}
+
+
+        MDScrollView
+            size_hint: 0.8,0.7
+            pos_hint: {"center_x": .5, "center_y": .4}
+            MDList:
+                id: list_items
+                size_hint_y: None
+                height: self.minimum_height
+                pos_hint: {'center_y': 0.5}
