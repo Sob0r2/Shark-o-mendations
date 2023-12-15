@@ -15,7 +15,7 @@ class Reviews():
         self.save()
 
     def watched(self):
-        return any(v == 1 for k,v in self.data.items())
+        return any(v >= 1 for k,v in self.data.items())
 
     def save(self):
         with open(r'C:\Users\jakub\Projekt\Reviews.json','w') as json_file:
