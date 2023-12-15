@@ -11,6 +11,8 @@ from Frontend.MainScreen.mainscreen import MainScreen
 from Frontend.NumOfSwipesScreen.numofswipesscreen import NumOfSwipesScreen
 from Frontend.SwipeScreen.swipescreen import SwipeScreen
 
+from Backend.model import SAE
+
 Builder.load_file("main.kv")
 Builder.load_file("Frontend/MainScreen/mainscreen.kv")
 Builder.load_file("Frontend/NumOfSwipesScreen/numofswipesscreen.kv")
